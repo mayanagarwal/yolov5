@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --nodes 1
 #SBATCH --gres=gpu:4
-#SBATCH --time 48:00:00
+#SBATCH --time 72:00:00
 #SBATCH --cpus-per-task=8
 #SBATCH -p gpgpu
 #SBATCH -q gpgpumse
