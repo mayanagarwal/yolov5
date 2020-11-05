@@ -95,8 +95,8 @@ I am currently a Masters student at The University of Melbourne and this repo is
 
 ## Scripts in SPARTAN
 
-JOB - 21396601 --> runnt is running on spartan-gpgpu042
-JOB - 21396599 --> runff is running on spartan-gpgpu061
-JOB - 21396595 --> rundf is running on spartan-gpgpu010
-JOB - 21396593 --> run_final is running on spartan-gpgpu004
-JOB - 21408590 --> runfs is running on spartan-gpgpu067
+1. JOB - 21396601 --> runnt is running on spartan-gpgpu042
+2. JOB - 21396599 --> runff is running on spartan-gpgpu061
+3. JOB - 21396595 --> rundf is running on spartan-gpgpu010
+4. JOB - 21396593 --> run_final is running on spartan-gpgpu004
+5. JOB - 21408590 --> runfs is running on spartan-gpgpu067
