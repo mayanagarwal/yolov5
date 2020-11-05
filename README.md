@@ -92,3 +92,11 @@ For business inquiries and professional support requests please visit them at ht
 ## About me
 
 I am currently a Masters student at The University of Melbourne and this repo is for detecting deepfakes using Yolo
+
+## Scripts in SPARTAN
+
+JOB - 21396601 --> runnt is running on spartan-gpgpu042
+JOB - 21396599 --> runff is running on spartan-gpgpu061
+JOB - 21396595 --> rundf is running on spartan-gpgpu010
+JOB - 21396593 --> run_final is running on spartan-gpgpu004
+JOB - 21408590 --> runfs is running on spartan-gpgpu067
