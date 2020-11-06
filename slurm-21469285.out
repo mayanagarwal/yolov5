@@ -1,0 +1,60 @@
+
+The following have been reloaded with a version change:
+  1) pillow/7.2.0-python-3.7.4 => pillow/6.2.1
+
+
+The following have been reloaded with a version change:
+  1) pillow/6.2.1 => pillow/7.2.0-python-3.7.4
+
+
+The following have been reloaded with a version change:
+  1) icu/65.1 => icu/64.2
+
+Using CUDA device0 _CudaDeviceProperties(name='Tesla P100-PCIE-12GB', total_memory=12198MB)
+           device1 _CudaDeviceProperties(name='Tesla P100-PCIE-12GB', total_memory=12198MB)
+           device2 _CudaDeviceProperties(name='Tesla P100-PCIE-12GB', total_memory=12198MB)
+           device3 _CudaDeviceProperties(name='Tesla P100-PCIE-12GB', total_memory=12198MB)
+
+Namespace(adam=False, batch_size=8, bucket='', cache_images=False, cfg='', data='custom_train/dataset_fs.yaml', device='', epochs=100, evolve=False, global_rank=0, hyp='data/hyp.scratch.yaml', image_weights=False, img_size=[640, 640], local_rank=0, logdir='runs/', multi_scale=False, name='', noautoanchor=False, nosave=False, notest=False, rect=False, resume=False, single_cls=False, sync_bn=False, total_batch_size=32, weights='weights/yolov5l.pt', workers=8, world_size=4)
+Start Tensorboard with "tensorboard --logdir runs/", view at http://localhost:6006/
+2020-11-06 16:26:51.342604: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+Hyperparameters {'lr0': 0.01, 'lrf': 0.2, 'momentum': 0.937, 'weight_decay': 0.0005, 'warmup_epochs': 3.0, 'warmup_momentum': 0.8, 'warmup_bias_lr': 0.1, 'box': 0.05, 'cls': 0.5, 'cls_pw': 1.0, 'obj': 1.0, 'obj_pw': 1.0, 'iou_t': 0.2, 'anchor_t': 4.0, 'fl_gamma': 0.0, 'hsv_h': 0.015, 'hsv_s': 0.7, 'hsv_v': 0.4, 'degrees': 0.0, 'translate': 0.1, 'scale': 0.5, 'shear': 0.0, 'perspective': 0.0, 'flipud': 0.0, 'fliplr': 0.5, 'mosaic': 1.0, 'mixup': 0.0}
+Overriding model.yaml nc=80 with nc=5
+Overriding model.yaml nc=80 with nc=5
+Overriding model.yaml nc=80 with nc=5
+Overriding model.yaml nc=80 with nc=5
+
+                 from  n    params  module                                  arguments                     
+  0                -1  1      7040  models.common.Focus                     [3, 64, 3]                    
+  1                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]               
+  2                -1  1    161152  models.common.BottleneckCSP             [128, 128, 3]                 
+  3                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]              
+  4                -1  1   1627904  models.common.BottleneckCSP             [256, 256, 9]                 
+  5                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]              
+  6                -1  1   6499840  models.common.BottleneckCSP             [512, 512, 9]                 
+  7                -1  1   4720640  models.common.Conv                      [512, 1024, 3, 2]             
+  8                -1  1   2624512  models.common.SPP                       [1024, 1024, [5, 9, 13]]      
+  9                -1  1  10234880  models.common.BottleneckCSP             [1024, 1024, 3, False]        
+ 10                -1  1    525312  models.common.Conv                      [1024, 512, 1, 1]             
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']          
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]                           
+ 13                -1  1   2823680  models.common.BottleneckCSP             [1024, 512, 3, False]         
+ 14                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]              
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']          
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]                           
+ 17                -1  1    707328  models.common.BottleneckCSP             [512, 256, 3, False]          
+ 18                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]              
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]                           
+ 20                -1  1   2561536  models.common.BottleneckCSP             [512, 512, 3, False]          
+ 21                -1  1   2360320  models.common.Conv                      [512, 512, 3, 2]              
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]                           
+ 23                -1  1  10234880  models.common.BottleneckCSP             [1024, 1024, 3, False]        
+ 24      [17, 20, 23]  1     53850  models.yolo.Detect                      [5, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [256, 512, 1024]]
+Model Summary: 335 layers, 4.74149e+07 parameters, 4.74149e+07 gradients
+
+
+
+
+Transferred 652/658 items from weights/yolov5l.pt
+Optimizer groups: 110 .bias, 118 conv.weight, 107 other
+Scanning images:   0%|          | 0/21422 [00:00<?, ?it/s]Scanning images:   0%|          | 78/21422 [00:00<00:27, 772.58it/s]Scanning images:   1%|          | 162/21422 [00:00<00:26, 789.43it/s]Scanning images:   1%|          | 252/21422 [00:00<00:25, 818.55it/s]Scanning images:   2%|▏         | 341/21422 [00:00<00:25, 838.17it/s]Scanning images:   2%|▏         | 430/21422 [00:00<00:24, 851.70it/s]Scanning images:   2%|▏         | 520/21422 [00:00<00:24, 865.32it/s]Scanning images:   3%|▎         | 609/21422 [00:00<00:23, 872.57it/s]Scanning images:   3%|▎         | 696/21422 [00:00<00:23, 870.22it/s]Scanning images:   4%|▎         | 789/21422 [00:00<00:23, 885.48it/s]Scanning images:   4%|▍         | 879/21422 [00:01<00:23, 887.68it/s]Scanning images:   5%|▍         | 966/21422 [00:01<00:23, 867.02it/s]Scanning images:   5%|▍         | 1052/21422 [00:01<00:23, 855.06it/s]Scanning images:   5%|▌         | 1137/21422 [00:01<00:24, 840.98it/s]Scanning images:   6%|▌         | 1224/21422 [00:01<00:23, 847.86it/s]Scanning images:   6%|▌         | 1312/21422 [00:01<00:23, 856.00it/s]Scanning images:   7%|▋         | 1409/21422 [00:01<00:22, 887.05it/s]Scanning images:   7%|▋         | 1506/21422 [00:01<00:21, 908.83it/s]Scanning images:   7%|▋         | 1599/21422 [00:01<00:21, 914.27it/s]Scanning images:   8%|▊         | 1691/21422 [00:01<00:21, 905.98it/s]Scanning images:   8%|▊         | 1782/21422 [00:02<00:21, 901.13it/s]Scanning images:   9%|▊         | 1873/21422 [00:02<00:22, 882.30it/s]Scanning images:   9%|▉         | 1962/21422 [00:02<00:22, 867.40it/s]Scanning images:  10%|▉         | 2049/21422 [00:02<00:22, 854.70it/s]Scanning images:  10%|▉         | 2142/21422 [00:02<00:22, 875.75it/s]Scanning images:  10%|█         | 2230/21422 [00:02<00:22, 871.69it/s]Scanning images:  11%|█         | 2318/21422 [00:02<00:22, 866.37it/s]Scanning images:  11%|█▏        | 2410/21422 [00:02<00:21, 881.03it/s]Scanning images:  12%|█▏        | 2502/21422 [00:02<00:21, 892.19it/s]Scanning images:  12%|█▏        | 2592/21422 [00:02<00:21, 874.52it/s]Scanning images:  13%|█▎        | 2683/21422 [00:03<00:21, 883.47it/s]Scanning images:  13%|█▎        | 2779/21422 [00:03<00:20, 902.87it/s]Scanning images:  13%|█▎        | 2871/21422 [00:03<00:20, 905.74it/s]Scanning images:  14%|█▍        | 2962/21422 [00:03<00:20, 883.53it/s]Scanning images:  14%|█▍        | 3051/21422 [00:03<00:20, 883.92it/s]
