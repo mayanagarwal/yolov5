@@ -2,7 +2,7 @@
 #SBATCH --nodes 1
 #SBATCH --gres=gpu:4
 #SBATCH --time 72:00:00
-#SBATCH --cpus-per-task=8
+#SBATCH --ntasks=8
 #SBATCH -p gpgpu
 #SBATCH -q gpgpumse
 
@@ -27,4 +27,4 @@ module unload pytorch/1.4.0-python-3.7.4
 module load pytorch-geometric/1.6.1-python-3.7.4-pytorch-1.6.0
 module load tensorflow/2.3.1-python-3.7.4
 
-time python3 -m torch.distributed.launch --nproc_per_node 4 train.py --batch-size 64 --data custom_train/dataset_ff.yaml --weights weights/yolov5l.pt
+time python3 -m torch.distributed.launch --nproc_per_node 4 train.py --batch-size 64 --epochs 100 --data custom_train/dataset_ff.yaml --weights weights/yolov5l.pt
