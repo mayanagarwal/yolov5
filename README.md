@@ -97,7 +97,8 @@ I am currently a Masters student at The University of Melbourne and this repo is
 
 1. JOB - 21469258 --> rundf is running on spartan-gpgpu060
 2. JOB - 21469196 --> runff is running on spartan-gpgpu028
-3. JOB - 21480288 --> runfs is running on spartan-gpgpu063
+3. JOB - 21496778 --> runfs is running on spartan-gpgpu063
 4. JOB - 21469198 --> runnt is running on spartan-gpgpu037
 5. JOB - 21480290 --> run_final is running on spartan-gpgpu065 (batch_size - 64)
 6. JOB - 21480289 --> run_final is running on spartan-gpgpu065 (batch_size - 32)
+7. JOB - 21497230 --> run_final (batch_size - 64 & no weights)
