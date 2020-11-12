@@ -17,10 +17,19 @@ from utils.general import (
 from utils.torch_utils import select_device, load_classifier, time_synchronized
 
 
-def detect(save_img=False):
+def detect( opt):
+    save_img=False
     out, source, weights, view_img, save_txt, imgsz = \
         opt.save_dir, opt.source, opt.weights, opt.view_img, opt.save_txt, opt.img_size
     webcam = source.isnumeric() or source.startswith(('rtsp://', 'rtmp://', 'http://')) or source.endswith('.txt')
+    prediction_image = "original 1"
+    prediction_dict = {
+        "original" : 0,
+        "deepfake" : 0,
+        "face2face" : 0,
+        "faceSwap" : 0,
+        "neuralTextures" : 0,
+    }
 
     # Initialize
     set_logging()
@@ -110,6 +119,8 @@ def detect(save_img=False):
 
                     if save_img or view_img:  # Add bbox to image
                         label = '%s %.2f' % (names[int(cls)], conf)
+                        prediction_image = label.split(" ")
+                        prediction_dict[prediction_image[0]] += 1
                         plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=3)
 
             # Print time (inference + NMS)
@@ -135,13 +146,15 @@ def detect(save_img=False):
                         fps = vid_cap.get(cv2.CAP_PROP_FPS)
                         w = int(vid_cap.get(cv2.CAP_PROP_FRAME_WIDTH))
                         h = int(vid_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-                        vid_writer = cv2.VideoWriter(sacdve_path, cv2.VideoWriter_fourcc(*fourcc), fps, (w, h))
+                        vid_writer = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*fourcc), fps, (w, h))
                     vid_writer.write(im0)
 
     if save_txt or save_img:
         print('Results saved to %s' % Path(out))
 
     print('Done. (%.3fs)' % (time.time() - t0))
+
+    return max(prediction_dict, key=prediction_dict.get)
 
 
 if __name__ == '__main__':
@@ -166,7 +179,7 @@ if __name__ == '__main__':
     with torch.no_grad():
         if opt.update:  # update all models (to fix SourceChangeWarning)
             for opt.weights in ['yolov5s.pt', 'yolov5m.pt', 'yolov5l.pt', 'yolov5x.pt']:
-                detect()
+                final_pred = detect(opt)
                 strip_optimizer(opt.weights)
         else:
-            detect()
+            final_pred = detect(opt)
